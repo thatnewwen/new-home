@@ -871,4 +871,9 @@ a:hover {
   .right {
     display: none;
   }
+
+  .title {
+    font-family: "Work Sans";
+    text-transform: uppercase;
+  }
 }
