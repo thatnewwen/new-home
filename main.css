@@ -140,9 +140,11 @@ body {
 }
 
 .sidebar {
+  cursor: pointer;
   width: 30%;
   height: 100vh;
   display: flex;
+  position: relative;
   align-items: center;
   justify-content: center;
   float: left;
@@ -262,6 +264,34 @@ body {
   border-radius: 2px;
 }
 
+.back {
+  display: none;
+  font-size: 12px;
+  position: absolute;
+  left: 0px;
+  top: 40px;
+  text-transform: uppercase;
+  right: 0px;
+  text-align: center;
+  color: white;
+  animation: blinker 2s linear infinite;
+  transition: 1s ease;
+}
+
+.et .back {
+  color: black;
+}
+
+.subtitle .back {
+  color: black;
+}
+
+@keyframes blinker {
+  50% {
+    opacity: 0;
+  }
+}
+
 .right {
   width: 70%;
   height: 100vh;
@@ -271,6 +301,24 @@ body {
   overflow-x: scroll;
   display: flex;
   scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+}
+
+.click-scroll {
+  position: absolute;
+  height: 100%;
+  left: 0;
+  right: 0;
+  transition: 0.5s;
+  cursor: ew-resize;
+}
+
+.et .click-scroll:hover {
+  background: #ffffff24;
+}
+
+.click-scroll:hover {
+  background: #0000002e;
 }
 
 .right::-webkit-scrollbar {
@@ -308,8 +356,8 @@ body {
 
 .portfolio-section {
   padding-left: 150px;
+  padding-right: 50px;
   min-width: 400px;
-  margin: 5px;
   position: relative;
 }
 
@@ -427,6 +475,7 @@ body {
 
 .snap-x {
   scroll-snap-align: start;
+  height: 100%;
 }
 
 .portfolio-section h2 {

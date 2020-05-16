@@ -15,6 +15,24 @@ $(document).ready(function() {
 
   setTimeout(adjustSideHeader, 300);
 
+  $(".right").on("scroll", function() {
+    if ($(this).scrollLeft() == 0) {
+      $(this).removeClass("visibleBack");
+      $(this)
+        .closest(".background")
+        .find(".back")
+        .css("display", "none");
+    }
+
+    if ($(this).scrollLeft() != 0 && !$(this).hasClass("visibleBack")) {
+      $(this).addClass("visibleBack");
+      $(this)
+        .closest(".background")
+        .find(".back")
+        .css("display", "block");
+    }
+  });
+
   $(".scroll").click(function() {
     console.log("hello");
     $(this)
@@ -22,6 +40,16 @@ $(document).ready(function() {
       .scrollTo({
         top: 0,
         left: 1000,
+        behavior: "smooth"
+      });
+  });
+
+  $(".sidebar").click(function() {
+    $(this)
+      .siblings(".right")[0]
+      .scrollTo({
+        top: 0,
+        left: 0,
         behavior: "smooth"
       });
   });
