@@ -35,9 +35,30 @@ body {
   text-align: center;
 }
 
+.circles {
+}
+
 .sticky {
   position: fixed;
   top: 0;
+}
+
+svg {
+  display: block;
+  width: 70%;
+  height: 100%;
+  margin: 0 auto;
+  display: block;
+  width: auto;
+  margin: 0 auto;
+  position: absolute;
+}
+
+.rect {
+  fill: #51d9c4;
+}
+path:hover {
+  /* fill: pink; */
 }
 
 .logo-section {
@@ -420,13 +441,7 @@ body {
   color: white;
   text-transform: uppercase;
   position: absolute;
-  right: 130px;
-  top: 60px;
   animation: rotation 20s infinite linear;
-}
-
-#circle:hover {
-  color: #ffd064;
 }
 
 @keyframes rotation {
@@ -598,7 +613,7 @@ body {
 }
 
 .title-background {
-  background: #4537f1;
+  background: #51d9c4;
   height: 100vh;
   display: flex;
   flex-direction: column;
@@ -900,11 +915,6 @@ a:hover {
 }
 
 @media (max-width: 500px) {
-  #circle {
-    right: 70px;
-    top: 10px;
-  }
-
   .title-name {
     width: 250px;
   }
